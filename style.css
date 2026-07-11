@@ -1,0 +1,1389 @@
+/* =========================
+   ОСНОВНЫЕ НАСТРОЙКИ
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f2f0ec;
+    color: #242220;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* =========================
+   ШАПКА
+========================= */
+
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 5%;
+
+    z-index: 10;
+}
+
+.name {
+    width: 32%;
+}
+
+.name-main {
+    font-family: Georgia, serif;
+    font-size: 27px;
+}
+
+.name-profession {
+    margin-top: 3px;
+
+    font-size: 11px;
+    letter-spacing: 1.5px;
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+
+    margin-left: auto;
+    margin-right: 40px;
+}
+
+.main-nav a {
+    font-size: 12px;
+    transition: opacity 0.3s;
+}
+
+.main-nav a:hover {
+    opacity: 0.5;
+}
+
+
+/* =========================
+   КНОПКА МЕНЮ
+========================= */
+
+.menu-button {
+    width: 54px;
+    height: 54px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #651d25;
+
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 5px;
+
+    position: relative;
+
+    z-index: 30;
+}
+
+.menu-button span {
+    width: 20px;
+    height: 1px;
+
+    background: white;
+
+    transition: 0.3s;
+}
+
+
+/* =========================
+   ВЫПЛЫВАЮЩЕЕ МЕНЮ
+========================= */
+
+.side-menu {
+    position: absolute;
+
+    top: 105px;
+    right: 5%;
+
+    width: 260px;
+
+    padding: 28px;
+
+    background: rgba(248, 247, 244, 0.97);
+
+    border-radius: 18px;
+
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-15px);
+
+    transition: 0.3s;
+
+    z-index: 20;
+}
+
+.side-menu.active {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+.side-menu a {
+    font-size: 13px;
+}
+
+
+/* =========================
+   ГЛАВНЫЙ ЭКРАН
+========================= */
+
+.hero {
+    min-height: 760px;
+
+    display: grid;
+    grid-template-columns: 52% 48%;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.hero-content {
+    padding:
+
+        200px
+        7%
+        80px
+        5%;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+.hero-category {
+    color: #651d25;
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    line-height: 1.8;
+
+    margin-bottom: 35px;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(45px, 4.5vw, 72px);
+
+    font-weight: normal;
+
+    line-height: 1.08;
+
+    letter-spacing: -2px;
+
+    max-width: 760px;
+}
+
+.accent-line {
+    width: 75px;
+    height: 2px;
+
+    background: #651d25;
+
+    margin-top: 42px;
+    margin-bottom: 30px;
+}
+
+.hero-description {
+    max-width: 520px;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+
+    gap: 45px;
+
+    margin-top: 40px;
+}
+
+.main-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 55px;
+
+    padding: 0 35px;
+
+    background: #651d25;
+
+    color: white;
+
+    font-size: 12px;
+
+    transition: background 0.3s;
+}
+
+.main-button:hover {
+    background: #48141a;
+}
+
+.text-button {
+    font-size: 12px;
+
+    border-bottom: 1px solid #242220;
+
+    padding-bottom: 4px;
+}
+
+
+/* =========================
+   ГЛАВНОЕ ФОТО
+========================= */
+
+.hero-image {
+    height: 760px;
+
+    position: relative;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    display: block;
+}
+
+
+/* =========================
+   СМЫСЛОВЫЕ БЛОКИ
+========================= */
+
+.thought-section {
+    min-height: 330px;
+
+    padding: 70px 6%;
+
+    display: grid;
+
+    grid-template-columns:
+        100px
+        minmax(300px, 1.2fr)
+        minmax(300px, 1fr);
+
+    align-items: center;
+
+    gap: 40px;
+
+    border-bottom: 1px solid #d1cec8;
+}
+
+.thought-number {
+    align-self: start;
+
+    font-family: Georgia, serif;
+
+    font-size: 42px;
+
+    color: #651d25;
+}
+
+.thought-section h2 {
+    font-family: Georgia, serif;
+
+    font-size: clamp(32px, 3vw, 50px);
+
+    font-weight: normal;
+
+    line-height: 1.15;
+}
+
+.thought-section p {
+    max-width: 480px;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   НАПРАВЛЕНИЯ РАБОТЫ
+========================= */
+
+.work-section {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    padding: 50px 4%;
+
+    border-bottom: 1px solid #d1cec8;
+}
+
+.work-item {
+    min-height: 130px;
+
+    padding: 10px 25px;
+
+    border-right: 1px solid #c7c3bd;
+}
+
+.work-item:last-child {
+    border-right: none;
+}
+
+.work-item span {
+    display: block;
+
+    margin-bottom: 25px;
+
+    font-family: Georgia, serif;
+
+    font-size: 22px;
+
+    color: #651d25;
+}
+
+.work-item p {
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   ОБЩИЕ ИНФОРМАЦИОННЫЕ БЛОКИ
+========================= */
+
+.about-section,
+.education-section,
+.articles-section {
+    padding: 100px 8%;
+
+    border-bottom: 1px solid #d1cec8;
+}
+
+.section-label {
+    margin-bottom: 25px;
+
+    color: #651d25;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+}
+
+.about-section h2,
+.education-section h2,
+.articles-section h2 {
+    margin-bottom: 20px;
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(38px, 4vw, 60px);
+
+    font-weight: normal;
+}
+
+.about-section > p:last-child,
+.education-section > p:last-child,
+.articles-section > p:last-child {
+    max-width: 650px;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   НИЖНЯЯ ЧАСТЬ
+========================= */
+
+.footer {
+    min-height: 190px;
+
+    padding: 50px 6%;
+
+    background: #1f1f1f;
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-text {
+    padding-left: 30px;
+
+    border-left: 1px solid #651d25;
+}
+
+.footer-text p {
+    font-size: 14px;
+
+    line-height: 1.6;
+}
+
+.footer-contact p {
+    font-size: 13px;
+
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   ПЛАНШЕТ
+========================= */
+
+@media (max-width: 1100px) {
+
+    .main-nav {
+        display: none;
+    }
+
+    .name {
+        width: auto;
+    }
+
+    .menu-button {
+        margin-left: auto;
+    }
+
+    .hero {
+        grid-template-columns: 55% 45%;
+    }
+
+    .hero-content {
+        padding-top: 180px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .thought-section {
+        grid-template-columns: 70px 1fr 1fr;
+    }
+
+    .work-section {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .work-item {
+        border-bottom: 1px solid #c7c3bd;
+    }
+
+}
+
+
+/* =========================
+   ТЕЛЕФОН
+========================= */
+
+@media (max-width: 750px) {
+
+    .header {
+        height: 90px;
+
+        padding: 0 20px;
+    }
+
+    .name-main {
+        font-size: 21px;
+    }
+
+    .name-profession {
+        font-size: 9px;
+    }
+
+    .menu-button {
+        width: 48px;
+        height: 48px;
+    }
+
+    .side-menu {
+        top: 85px;
+
+        left: 20px;
+        right: 20px;
+
+        width: auto;
+    }
+
+
+    /* ГЛАВНЫЙ ЭКРАН */
+
+    .hero {
+        display: flex;
+
+        flex-direction: column;
+
+        min-height: auto;
+    }
+
+    .hero-content {
+        padding:
+
+            145px
+            20px
+            55px;
+    }
+
+    .hero-category {
+        font-size: 10px;
+
+        letter-spacing: 2.5px;
+
+        margin-bottom: 25px;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+
+        letter-spacing: -1px;
+    }
+
+    .accent-line {
+        margin-top: 30px;
+        margin-bottom: 25px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 25px;
+    }
+
+    .main-button {
+        width: 100%;
+
+        padding: 0 20px;
+    }
+
+
+    /* ФОТО */
+
+    .hero-image {
+        height: 540px;
+    }
+
+    .hero-image img {
+        object-position: 68% center;
+    }
+
+
+    /* СМЫСЛОВЫЕ БЛОКИ */
+
+    .thought-section {
+        display: block;
+
+        min-height: auto;
+
+        padding: 60px 20px;
+    }
+
+    .thought-number {
+        margin-bottom: 25px;
+
+        font-size: 32px;
+    }
+
+    .thought-section h2 {
+        margin-bottom: 35px;
+
+        font-size: 38px;
+    }
+
+
+    /* НАПРАВЛЕНИЯ */
+
+    .work-section {
+        display: block;
+
+        padding: 20px;
+    }
+
+    .work-item {
+        min-height: auto;
+
+        padding: 30px 0;
+
+        border-right: none;
+
+        border-bottom: 1px solid #c7c3bd;
+    }
+
+
+    /* ИНФОРМАЦИЯ */
+
+    .about-section,
+    .education-section,
+    .articles-section {
+        padding: 70px 20px;
+    }
+
+
+    /* НИЖНЯЯ ЧАСТЬ */
+
+    .footer {
+        padding: 50px 20px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 45px;
+    }
+
+}.about-text {
+    max-width: 900px;
+    margin-top: 35px;
+}
+
+.about-text p {
+    margin-bottom: 22px;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.about-text p:last-child {
+    margin-bottom: 0;
+}
+/* =========================
+   ПІДХІД
+========================= */
+
+.approach-section {
+    padding: 100px 7%;
+
+    border-bottom: 1px solid #d1cec8;
+}
+
+.approach-title {
+    max-width: 850px;
+
+    margin-bottom: 70px;
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(38px, 4vw, 62px);
+
+    font-weight: normal;
+
+    line-height: 1.15;
+}
+
+.approach-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    border-top: 1px solid #c7c3bd;
+
+    border-bottom: 1px solid #c7c3bd;
+}
+
+.approach-item {
+    min-height: 330px;
+
+    padding: 40px;
+
+    border-right: 1px solid #c7c3bd;
+}
+
+.approach-item:last-child {
+    border-right: none;
+}
+
+.approach-item span {
+    display: block;
+
+    margin-bottom: 50px;
+
+    font-family: Georgia, serif;
+
+    font-size: 28px;
+
+    color: #651d25;
+}
+
+.approach-item h3 {
+    margin-bottom: 25px;
+
+    font-size: 13px;
+
+    font-weight: normal;
+
+    letter-spacing: 1.5px;
+}
+
+.approach-item p {
+    max-width: 400px;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* АДАПТАЦИЯ БЛОКА ПІДХІД */
+
+@media (max-width: 750px) {
+
+    .approach-section {
+        padding: 70px 20px;
+    }
+
+    .approach-title {
+        margin-bottom: 50px;
+
+        font-size: 38px;
+    }
+
+    .approach-grid {
+        display: block;
+    }
+
+    .approach-item {
+        min-height: auto;
+
+        padding: 40px 0;
+
+        border-right: none;
+
+        border-bottom: 1px solid #c7c3bd;
+    }
+
+    .approach-item:last-child {
+        border-bottom: none;
+    }
+
+    .approach-item span {
+        margin-bottom: 30px;
+    }
+
+}
+/* =========================
+   КОНТАКТИ
+========================= */
+
+.footer {
+    min-height: 520px;
+
+    padding: 90px 7%;
+
+    background: #1f1f1f;
+
+    color: white;
+
+    display: grid;
+
+    grid-template-columns: 1.3fr 1fr;
+
+    align-items: center;
+
+    gap: 100px;
+}
+
+.footer-text {
+    padding-left: 0;
+
+    border-left: none;
+}
+
+.footer-label {
+    color: #a45a61;
+
+    margin-bottom: 35px;
+}
+
+.footer h2 {
+    max-width: 700px;
+
+    font-family: Georgia, serif;
+
+    font-size: clamp(45px, 5vw, 76px);
+
+    font-weight: normal;
+
+    line-height: 1.08;
+}
+
+.footer-description {
+    margin-top: 35px;
+
+    font-size: 15px;
+
+    color: #c7c3bd;
+}
+
+.footer-links {
+    border-top: 1px solid #555;
+}
+
+.footer-links a {
+    min-height: 90px;
+
+    padding: 0 10px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom: 1px solid #555;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    transition: padding 0.3s, color 0.3s;
+}
+
+.footer-links a:hover {
+    padding-left: 25px;
+
+    color: #a45a61;
+}
+
+.footer-links span {
+    font-size: 22px;
+}
+
+
+/* ТЕЛЕФОН */
+
+@media (max-width: 750px) {
+
+    .footer {
+        min-height: auto;
+
+        padding: 70px 20px;
+
+        display: block;
+    }
+
+    .footer h2 {
+        font-size: 43px;
+    }
+
+    .footer-links {
+        margin-top: 60px;
+    }
+
+}
+@media (max-width: 750px) {
+
+    .hero-image {
+        height: auto;
+    }
+
+    .hero-image img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        display: block;
+    }
+
+}/* =========================
+   СТРАНИЦА СТАТЬИ
+========================= */
+
+.article-header {
+    height: 110px;
+    padding: 0 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid #d6d2cc;
+}
+
+.article-name {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: #242220;
+}
+
+.article-name-main {
+    font-family: Georgia, serif;
+    font-size: 26px;
+}
+
+.article-name-profession {
+    margin-top: 3px;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+.article-back {
+    color: #242220;
+    text-decoration: none;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
+
+
+/* ВЕРХ СТАТЬИ */
+
+.article-intro {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 90px 40px 75px;
+}
+
+.article-category {
+    margin-bottom: 35px;
+
+    color: #701f29;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.article-intro h1 {
+    max-width: 850px;
+    margin: 0;
+
+    font-family: Georgia, serif;
+    font-size: 60px;
+    font-weight: normal;
+    line-height: 1.08;
+    letter-spacing: -1px;
+}
+
+.article-reading-time {
+    margin-top: 35px;
+
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+
+/* ПЕРВАЯ ЦИТАТА */
+
+.article-quote {
+    margin: 0;
+    padding: 55px max(40px, calc((100% - 1200px) / 2 + 40px));
+
+    background: #701f29;
+    color: white;
+
+    font-family: Georgia, serif;
+    font-size: 38px;
+    font-weight: normal;
+    line-height: 1.25;
+}
+
+
+/* ОСНОВНОЙ ТЕКСТ */
+
+.article-content {
+    width: calc(100% - 40px);
+    max-width: 760px;
+
+    margin: 0 auto;
+    padding: 75px 0;
+}
+
+.article-content > p {
+    margin: 0 0 22px;
+
+    font-size: 17px;
+    line-height: 1.75;
+}
+
+
+/* ПЕРВЫЕ КОРОТКИЕ ФРАЗЫ */
+
+.article-content > p:nth-child(-n+5) {
+    margin-bottom: 12px;
+}
+
+
+/* АКЦЕНТНЫЙ АБЗАЦ */
+
+.article-content .article-accent {
+    margin: 45px 0 25px;
+    padding-top: 30px;
+
+    border-top: 1px solid #d1cdc7;
+
+    font-family: Georgia, serif;
+    font-size: 25px;
+    line-height: 1.4;
+}
+
+
+/* КРУПНЫЕ ФРАЗЫ ВНУТРИ ТЕКСТА */
+
+.article-content .article-big-text {
+    margin: 55px 0;
+
+    font-family: Georgia, serif;
+    font-size: 34px;
+    line-height: 1.25;
+}
+
+
+/* КОРОТКИЙ БЛОК С ПОЛОСОЙ */
+
+.article-short {
+    margin: 45px 0 !important;
+    padding: 5px 0 5px 25px;
+
+    border-left: 1px solid #701f29;
+}
+
+
+/* СРАВНЕНИЯ */
+
+.article-comparison {
+    margin: 45px 0;
+    padding: 30px 15px;
+
+    border-top: 1px solid #d1cdc7;
+    border-bottom: 1px solid #d1cdc7;
+}
+
+.article-comparison p {
+    margin: 0 0 15px;
+
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.article-comparison p:last-child {
+    margin-bottom: 0;
+
+    font-family: Georgia, serif;
+    font-size: 25px;
+}
+
+
+/* ВТОРАЯ ЦИТАТА */
+
+.article-quote-second {
+    padding: 55px max(40px, calc((100% - 900px) / 2));
+
+    background: #1f1f1f;
+
+    font-size: 32px;
+    line-height: 1.3;
+}
+
+
+/* ФИНАЛ */
+
+.article-ending {
+    max-width: 760px;
+
+    margin: 0 auto;
+    padding: 75px 20px;
+}
+
+.article-ending > p {
+    margin: 0 0 18px;
+
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.article-ending h2 {
+    margin: 0 0 45px;
+
+    font-family: Georgia, serif;
+    font-size: 31px;
+    font-weight: normal;
+    line-height: 1.3;
+}
+
+
+/* АВТОР */
+
+.article-author {
+    padding: 65px max(40px, calc((100% - 1200px) / 2 + 40px));
+
+    background: #1f1f1f;
+    color: white;
+}
+
+.article-author .section-label {
+    margin-bottom: 25px;
+
+    color: #a84a54;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.article-author h2 {
+    margin: 0 0 8px;
+
+    font-family: Georgia, serif;
+    font-size: 36px;
+    font-weight: normal;
+}
+
+.article-author > p:not(.section-label) {
+    margin-bottom: 35px;
+    color: #c7c3bd;
+}
+
+.article-author a {
+    display: inline-block;
+
+    color: white;
+    text-decoration: none;
+
+    padding-bottom: 5px;
+    border-bottom: 1px solid white;
+
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+
+/* =========================
+   МОБИЛЬНАЯ ВЕРСИЯ СТАТЬИ
+========================= */
+
+@media (max-width: 750px) {
+
+    .article-header {
+        height: 85px;
+        padding: 0 20px;
+    }
+
+    .article-name-main {
+        font-size: 20px;
+    }
+
+    .article-name-profession {
+        font-size: 7px;
+    }
+
+    .article-back {
+        font-size: 8px;
+    }
+
+
+    .article-intro {
+        padding: 60px 20px 50px;
+    }
+
+    .article-category {
+        margin-bottom: 25px;
+    }
+
+    .article-intro h1 {
+        font-size: 40px;
+        line-height: 1.1;
+    }
+
+    .article-reading-time {
+        margin-top: 30px;
+    }
+
+
+    .article-quote {
+        padding: 45px 20px;
+        font-size: 28px;
+    }
+
+
+    .article-content {
+        width: auto;
+        padding: 55px 20px;
+    }
+
+    .article-content > p {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .article-content .article-accent {
+        font-size: 22px;
+    }
+
+    .article-content .article-big-text {
+        margin: 45px 0;
+        font-size: 28px;
+    }
+
+
+    .article-comparison {
+        margin: 40px 0;
+        padding: 25px 0;
+    }
+
+    .article-comparison p:last-child {
+        font-size: 22px;
+    }
+
+
+    .article-quote-second {
+        padding: 45px 20px;
+        font-size: 26px;
+    }
+
+
+    .article-ending {
+        padding: 55px 20px;
+    }
+
+    .article-ending h2 {
+        margin-bottom: 35px;
+        font-size: 27px;
+    }
+
+
+    .article-author {
+        padding: 55px 20px;
+    }
+
+    .article-author h2 {
+        font-size: 32px;
+    }
+}/* ФИНАЛЬНАЯ КОРРЕКЦИЯ СТАТЬИ */
+
+/* Делаем бордовый блок с цитатой компактнее */
+.article-quote {
+    padding-top: 55px;
+    padding-bottom: 55px;
+}
+
+/* Немного уплотняем основной текст статьи */
+.article-content p {
+    margin-bottom: 22px;
+}
+
+/* Уменьшаем слишком большие расстояния перед заголовками */
+.article-content h2 {
+    margin-top: 55px;
+    margin-bottom: 28px;
+}
+
+/* Компактнее оформляем небольшие смысловые блоки */
+.article-content blockquote {
+    margin-top: 38px;
+    margin-bottom: 38px;
+}/* ===== КАРТОЧКА СТАТЬИ ===== */
+
+.article-card {
+    display: block;
+    max-width: 1000px;
+    margin-top: 60px;
+    padding: 55px 60px 40px;
+    border-top: 1px solid #c9c3bd;
+    border-bottom: 1px solid #c9c3bd;
+    color: #242220;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.article-card:hover {
+    background: #ebe6e1;
+}
+
+.article-card-category {
+    margin-bottom: 30px;
+    color: #761d27;
+    font-size: 12px;
+    letter-spacing: 0.22em;
+}
+
+.article-card h3 {
+    max-width: 750px;
+    margin: 0;
+    font-family: Georgia, serif;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.25;
+}
+
+
+
+.article-card-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 50px;
+    font-size: 11px;
+    letter-spacing: 0.16em;
+}
+
+.article-card-arrow {
+    font-size: 30px;
+    letter-spacing: 0;
+}
+
+@media (max-width: 768px) {
+
+    .article-card {
+        margin-top: 35px;
+        padding: 35px 0 25px;
+    }
+
+   .article-card h3 {
+    font-size: 24px;
+    line-height: 1.3;
+}
+}
+
+    .article-card-bottom {
+        margin-top: 35px;
+    }
